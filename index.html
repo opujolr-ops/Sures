@@ -403,7 +403,7 @@ function renderLog(){
       <table class="legs"><thead><tr><th>Casa</th><th>Cuota</th><th>Stake</th></tr></thead><tbody>
         ${s.legs.map((l,i)=>`<tr><td>${esc(l.name||'Casa '+(i+1))}</td><td>${String(l.odds).replace('.',',')}</td><td>${money(l.stake)}</td></tr>`).join('')}
       </tbody></table>
-      <div class="kpis"><span>Stake total <b>${money(s.total)}</b></span><span>Beneficio <b class="${cls(s.profit)}">${signed(s.profit)}</b></span></div>
+      <div class="kpis"><span>Stake total <b>${money(s.total)}</b></span><span>Beneficio <b class="${cls(s.profit)}">${signed(s.profit)}</b></span><span>ROI <b class="${cls(s.profit)}">${(s.total?s.profit/s.total*100:0).toFixed(2).replace('.',',')} %</b></span></div>
       <div class="row">
         ${fin?`<button class="btn ghost" data-a="reopen">Reabrir</button>`:`<button class="btn ok" data-a="fin">Finalizar</button>`}
         <button class="btn danger" data-a="del">${armed[s.id]?'¿Seguro? Eliminar':'Eliminar'}</button>
