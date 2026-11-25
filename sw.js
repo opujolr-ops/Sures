@@ -1,5 +1,5 @@
 // Guarda la app para que abra rápido y sin conexión. Sube el número de versión si cambias archivos.
-const CACHE = 'sures-v1';
+const CACHE = 'sures-v2';
 const HOSTS = [self.location.origin, 'https://www.gstatic.com', 'https://fonts.googleapis.com', 'https://fonts.gstatic.com'];
 self.addEventListener('install', e => { self.skipWaiting(); });
 self.addEventListener('activate', e => {
